@@ -9,7 +9,8 @@ public class MotorBike {
 		// inputs- int speed
 		// outputs- void
 		// name- setSpeed
-
+		
+		//Constructores
 		public MotorBike() {
 			this(5);
 		}
@@ -17,6 +18,8 @@ public class MotorBike {
 		MotorBike(int velocidad){
 			this.velocidad = velocidad;
 		}
+		
+		// behavior
 		void start() {
 			System.out.println("Motocicleta arranco");
 		}

@@ -2,7 +2,7 @@ package ExercisesC;
 
 public class IfStatementRunner2 {
 	public static void main(String[] args) {
-		puzzle1();
+		puzzle2();
 	}
 	public static void puzzle1() {
 		int k = 15;

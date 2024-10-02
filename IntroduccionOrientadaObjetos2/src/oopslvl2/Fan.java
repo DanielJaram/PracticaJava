@@ -18,6 +18,26 @@ public class Fan {
 		this.color = color;
 	}
 	
+	//isOn encendido
+	public void encendido(boolean encendido) {
+		this.encendido = encendido;
+	}
+	
+	public void switchEncendido() {
+		this.encendido = true;
+		setVelocidad((byte)5);
+	}
+	
+	public void switchApagado() {
+		this.encendido = false;
+		setVelocidad((byte)0);
+	}
+	
+	public void setVelocidad(byte velocidad) {
+		this.velocidad = velocidad;
+	}
+	
+	
 	public String toString() {
 		return String.format("marca - %s, radio - %f, color - %s, encendido - %b, velocidad - %d" ,
 				 marca, radio, color, encendido, velocidad);

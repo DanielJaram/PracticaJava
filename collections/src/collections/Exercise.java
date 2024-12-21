@@ -32,5 +32,69 @@ public class Exercise {
 	        return st;
 	    }
 	}
+	
+	public class MyString {
+		 
+	    public String str;
+	 
+	    public MyString(String str) {
+	        this.str = str;
+	    }
+	    
+	    public boolean isHexadecimalChar(char ch) {
+	    	// Verificar si el carácter está en el rango de dígitos hexadecimales (A-F o a-f)
+	        return (ch >= 'A' && ch <= 'F') || (ch >= 'a' && ch <= 'f');
+	    }
+	 
+	    public boolean isHexadecimal() {
+	    	// Una cadena nula o una cadena vacía no es un valor hexadecimal válido
+	        if (str == null || str.length() == 0) {
+	            return false;
+	        }
+	 
+	        for (char ch : str.toCharArray()) {
+	        	// Si algún carácter no es un dígito o un carácter hexadecimal, no es un carácter hexadecimal válido.
+	            if (!Character.isDigit(ch) && !isHexadecimalChar(ch)) {
+	                return false;
+	            }
+	        }
+	 
+	     // Si hemos recorrido todos los caracteres y todos son válidos,
+	     // entonces la cadena es un hexadecimal válido
+	        return true;
+	    }
+	 
+	    
+	}
+	
+	public class StringMagic2 {
+
+        public String reverseWordsInSentence(String sentence) {
+        // Caso especial: si la oración es nula, devuelve "INVALIDO".
+        if (sentence == null) {
+            return "INVALID";
+        }
+ 
+        // Caso especial: si la oración está vacía, devuelve una cadena vacía.
+        if (sentence.isEmpty()) {
+            return "";
+        }
+ 
+        // Divide la oración en palabras
+        String[] words = sentence.split(" ");
+ 
+        // Inicializa un StringBuilder para almacenar la oración invertida.
+        StringBuilder reversedSentence = new StringBuilder();
+ 
+        // Itera sobre cada palabra e inviértela.
+        for (String word : words) {
+            StringBuilder reversedWord = new StringBuilder(word).reverse();
+            reversedSentence.append(reversedWord).append(" ");
+        }
+ 
+        // Elimina cualquier espacio en blanco al final y devuelve la oración invertida.
+        return reversedSentence.toString().trim();
+	    }
+	}
 
 }

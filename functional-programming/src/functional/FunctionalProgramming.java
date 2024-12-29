@@ -16,9 +16,9 @@ public class FunctionalProgramming {
 	}
 	
 	private static void printWithFP(List<String> list) {
-		for(String string:list) {
-			System.out.println(string);
-		}
+		list.stream().forEach(
+				element -> System.out.println("element -" + element)
+				);
 	}
 
 }
